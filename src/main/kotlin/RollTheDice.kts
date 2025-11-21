@@ -12,24 +12,30 @@ fun main() {
 
     val aDie = Random
 
-    val playerScore = aDie.nextInt(1,7)
-    val computerScore = aDie.nextInt(1,7)
 
     println("Gebe deinen Namen ein")
     var nameAnfrage: String = readln()
 
 
-    // Todo: Ausgeben, wer mehr Runden gewonnen hat
-
     var breakGame : String = "Ja"
-
+    var counterWIN : Int = 0
+    var counterLose : Int = 0
 
     while (breakGame.equals("ja", ignoreCase = true)) {
 
+        val playerScore = aDie.nextInt(1,7)
+        val computerScore = aDie.nextInt(1,7)
+
         println("Du würfelst: $playerScore  --  Computer würfelt: $computerScore")
         when {
-            playerScore > computerScore -> println("$nameAnfrage gewinnt")
-            playerScore < computerScore -> println("Der Computer gewinnt")
+            playerScore > computerScore -> {
+                println("$nameAnfrage gewinnt")
+                counterWIN += 1
+            }
+            playerScore < computerScore -> {
+                counterLose += 1
+                println("Der Computer gewinnt")
+            }
             else -> println("Unentschieden")
         }
         println("Möchtest du weiter Spielen ? (Ja/Nein)")
@@ -37,6 +43,7 @@ fun main() {
         breakGame = readln()
     }
 
+    println("Runden gewonnen: $nameAnfrage: $counterWIN Runden gewonnen Copmuter: $counterLose")
 }
 
 main()
