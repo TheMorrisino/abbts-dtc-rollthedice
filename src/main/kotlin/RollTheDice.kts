@@ -18,9 +18,7 @@ fun main() {
     println("Gebe deinen Namen ein")
     var nameAnfrage: String = readln()
 
-    // Todo: Den Fehler im Programm finden und beheben
-    // Todo: Den Spieler nach dem Namen fragen
-    // Todo: Solange spielen bis Spieler abbricht
+
     // Todo: Ausgeben, wer mehr Runden gewonnen hat
 
     var keinBock : String = "Ja"
