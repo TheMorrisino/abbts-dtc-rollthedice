@@ -23,10 +23,10 @@ fun main() {
     // Todo: Solange spielen bis Spieler abbricht
     // Todo: Ausgeben, wer mehr Runden gewonnen hat
 
-    var keinBock : String = "Ja"
-    var breakwhile : Boolean = true
+    var breakGame : String = "Ja"
 
-    while (keinBock.equals("ja", ignoreCase = true)) {
+
+    while (breakGame.equals("ja", ignoreCase = true)) {
 
         println("Du würfelst: $playerScore  --  Computer würfelt: $computerScore")
         when {
@@ -36,7 +36,7 @@ fun main() {
         }
         println("Möchtest du weiter Spielen ? (Ja/Nein)")
 
-        keinBock = readln()
+        breakGame = readln()
     }
 
 }
